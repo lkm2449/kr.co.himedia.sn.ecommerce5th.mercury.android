@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layoutBackground"
+    tools:context=".login.activity.ResultIdActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="159dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="159dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_letter" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="224dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="112dp"
+        android:text="아이디 찾기 결과"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtResultId"
+        android:layout_width="118dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="244dp"
+        android:text="아이디"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnIdPwd"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_round"
+        android:backgroundTint="@color/buttonColor"
+        android:text="비밀번호 찾기"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultId" />
+
+    <Button
+        android:id="@+id/btnIdLogin"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_round"
+        android:backgroundTint="@color/buttonColor"
+        android:text="로그인"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultId" />
+</androidx.constraintlayout.widget.ConstraintLayout>

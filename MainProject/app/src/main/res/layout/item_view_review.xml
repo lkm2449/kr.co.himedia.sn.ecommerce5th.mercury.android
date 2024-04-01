@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="#FFFFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_review"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/product" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtSaleName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="판매명"
+                    android:textSize="22sp"
+                    android:maxLines="1"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/review_ratingbar"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:numStars="5"
+                        android:progressTint="#FFEB3B"
+                        android:rating="5"
+                        android:layout_marginTop="5dp"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txt_review_dt_reg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:text="등록일" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_review_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="내용"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
