@@ -171,12 +171,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".join.activity.JoinActivity"
             android:exported="false" />
         <activity
             android:name=".join.activity.TosActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".customer.activity.ReviewActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

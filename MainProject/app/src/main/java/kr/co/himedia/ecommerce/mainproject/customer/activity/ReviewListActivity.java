@@ -6,8 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import kr.co.himedia.ecommerce.mainproject.R;
@@ -42,6 +47,8 @@ public class ReviewListActivity extends AppCompatActivity {
         reviewListAdapter.setItems(listSaleDto);
 
         reviewListAdapter.notifyDataSetChanged();
+
+
 
         reviewListAdapter.setOnClickListener(new OnReviewItemClickListener() {
             @Override

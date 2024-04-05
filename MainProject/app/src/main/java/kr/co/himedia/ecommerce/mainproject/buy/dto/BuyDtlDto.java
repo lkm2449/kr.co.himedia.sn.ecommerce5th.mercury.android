@@ -16,6 +16,7 @@ public class BuyDtlDto implements Serializable {
     private Integer count;
     private String dt_reg;
     private int register;
+    private String cd_state_rev;
 
     private String sle_nm;
     private String img;
@@ -23,9 +24,22 @@ public class BuyDtlDto implements Serializable {
     private String desces;
     private int seq_sll;
     private int seq_cst;
+    private String cd_state_pay;
 
+    public String getCd_state_pay() {
+        return cd_state_pay;
+    }
 
+    public void setCd_state_pay(String cd_state_pay) {
+        this.cd_state_pay = cd_state_pay;
+    }
 
+    public String getCd_state_rev() {
+        return cd_state_rev;
+    }
+    public void setCd_state_rev(String cd_state_rev) {
+        this.cd_state_rev = cd_state_rev;
+    }
     public int getSeq_cst() {
         return seq_cst;
     }

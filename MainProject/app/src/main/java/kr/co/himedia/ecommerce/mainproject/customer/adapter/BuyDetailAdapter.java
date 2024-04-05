@@ -1,5 +1,6 @@
 package kr.co.himedia.ecommerce.mainproject.customer.adapter;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import kr.co.himedia.ecommerce.mainproject.R;
 import kr.co.himedia.ecommerce.mainproject.buy.dto.BuyDtlDto;
 import kr.co.himedia.ecommerce.mainproject.common.Config;
+import kr.co.himedia.ecommerce.mainproject.customer.activity.ReviewActivity;
 import kr.co.himedia.ecommerce.mainproject.customer.interfaces.OnBuyDetailItemClickListener;
 import kr.co.himedia.ecommerce.mainproject.main.adapter.CartAdapter;
 
@@ -87,6 +89,7 @@ public class BuyDetailAdapter extends RecyclerView.Adapter<BuyDetailAdapter.View
         TextView txt_bdt_price;
         ImageView imgBuyDtl;
         Button btnReview;
+        TextView txt_cd_state_rev;
 
         public ViewHolder(View itemView, final OnBuyDetailItemClickListener listener) {
             super(itemView);
@@ -96,6 +99,7 @@ public class BuyDetailAdapter extends RecyclerView.Adapter<BuyDetailAdapter.View
             txt_bdt_price = itemView.findViewById(R.id.txt_bdt_price);
             imgBuyDtl = itemView.findViewById(R.id.imgBuyDtl);
             btnReview = itemView.findViewById(R.id.btnReview);
+            txt_cd_state_rev = itemView.findViewById(R.id.txt_cd_state_rev);
 
             imgBuyDtl.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -126,6 +130,21 @@ public class BuyDetailAdapter extends RecyclerView.Adapter<BuyDetailAdapter.View
             txt_bdt_count.setText(buyDtlDto.getCount() + "개");
             txt_bdt_price.setText(buyDtlDto.getPrice() + "원");
             new BuyDetailAdapter.ViewHolder.DownloadFilesTask().execute(Config.serverUrl + buyDtlDto.getImg());
+
+            if(buyDtlDto.getCd_state_pay().equals("결제취소")){
+                txt_cd_state_rev.setVisibility(View.VISIBLE);
+                btnReview.setVisibility(View.GONE);
+                txt_cd_state_rev.setText("결제 취소를 한 상품입니다");
+            } else if(buyDtlDto.getCd_state_rev() == null){
+                txt_cd_state_rev.setVisibility(View.GONE);
+                btnReview.setVisibility(View.VISIBLE);
+            } else if(buyDtlDto.getCd_state_rev().equals("Y")){
+                txt_cd_state_rev.setVisibility(View.VISIBLE);
+                btnReview.setVisibility(View.GONE);
+            } else {
+                txt_cd_state_rev.setVisibility(View.GONE);
+                btnReview.setVisibility(View.VISIBLE);
+            }
         }
 
         private class DownloadFilesTask extends AsyncTask<String,Void, Bitmap> {

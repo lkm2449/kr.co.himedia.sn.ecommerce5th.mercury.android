@@ -52,7 +52,7 @@ public class JoinActivity extends AppCompatActivity {
     EditText editPhone;
     EditText editPostcode;
     EditText editAddress;
-    EditText editAddress2;
+   // EditText editAddress2;
 
     EditText editAddress3;
 

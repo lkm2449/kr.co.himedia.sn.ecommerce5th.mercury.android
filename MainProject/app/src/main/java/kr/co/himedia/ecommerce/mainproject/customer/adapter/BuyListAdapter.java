@@ -2,6 +2,7 @@ package kr.co.himedia.ecommerce.mainproject.customer.adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -107,6 +108,12 @@ public class BuyListAdapter extends RecyclerView.Adapter<BuyListAdapter.ViewHold
             txt_bmt_buy_info.setText(buyMstDto.getBuy_info());
             txt_bmt_total_price.setText(buyMstDto.getBuy_t_price() + " 원");
             new BuyListAdapter.ViewHolder.DownloadFilesTask().execute(Config.serverUrl + buyMstDto.getImg());
+
+            if(buyMstDto.getCd_state_pay().equals("결제취소")){
+                txt_bmt_cd_state_delivery.setText("결제 취소");
+                txt_bmt_buy_info.setTextColor(Color.parseColor("#FF0000"));
+                txt_bmt_total_price.setTextColor(Color.parseColor("#FF0000"));
+            }
         }
 
         private class DownloadFilesTask extends AsyncTask<String,Void, Bitmap> {

@@ -53,7 +53,19 @@ public class BuyDetailActivity extends AppCompatActivity {
 
             @Override
             public void onBtnReviewlick(BuyDetailAdapter.ViewHolder holder, View view, int position) {
-                Toast.makeText(getApplicationContext(), "버튼 클릭", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(BuyDetailActivity.this, ReviewActivity.class);
+
+                BuyDtlDto item = buyDetailAdapter.getItem(position);
+
+                intent.putExtra("seq_buy_dtl", Integer.toString(item.getSeq_buy_dtl()));
+                intent.putExtra("seq_sle", Integer.toString(item.getSeq_sle()));
+                intent.putExtra("sle_nm", item.getSle_nm());
+                intent.putExtra("img", item.getImg());
+
+                startActivity(intent);
+
+                //Toast.makeText(getApplicationContext(), "버튼 클릭", Toast.LENGTH_LONG).show();
             }
         });
     }
