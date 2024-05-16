@@ -16,7 +16,7 @@
 ### <a href="https://github.com/lkm2449/kr.co.himedia.sn.ecommerce5th.mercury.front">front</a>
 ![front](https://github.com/lkm2449/lkm2449/assets/82378924/99f49e0a-a6fe-4e43-973e-d8cab9784422)
 
-### <a href="https://github.com/lkm2449/kr.co.himedia.sn.ecommerce5th.mercury.backend">backend</a>
+### <a href="https://github.com/lkm2449/kr.co.himedia.sn.ecommerce5th.mercury.backoffice">backoffice</a>
 ![backend](https://github.com/lkm2449/lkm2449/assets/82378924/c94b4180-1df1-4bfd-8857-08464aa6465e)
 
 ### <a href="https://github.com/lkm2449/kr.co.himedia.sn.ecommerce5th.mercury.android">android</a>
